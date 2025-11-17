@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VELLTOOLS - AI Script Generator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <!-- LOGIN -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Welcome to VELLTOOLS</h2>
+        <p>Sign in to access AI-powered script generation</p>
+      </div>
+      <div class="modal-form">
+        <div class="form-group">
+          <label for="loginUsername">Username</label>
+          <input id="loginUsername" class="form-input" type="text" placeholder="Enter your username"/>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" class="form-input" type="password" placeholder="Enter your password"/>
+        </div>
+        <button id="loginBtn" class="modal-btn">Login</button>
+        <p>No account? <a id="showSignup" class="switch-form">Create one</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGNUP -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Create Account</h2>
+        <p>Join VELLTOOLS to start creating scripts</p>
+      </div>
+      <div class="modal-form">
+        <div class="form-group">
+          <label for="signupUsername">Username</label>
+          <input id="signupUsername" class="form-input" type="text" placeholder="Choose a username"/>
+        </div>
+        <div class="form-group">
+          <label for="signupPassword">Password</label>
+          <input id="signupPassword" class="form-input" type="password" placeholder="Create a password"/>
+        </div>
+        <button id="signupBtn" class="modal-btn">Sign Up</button>
+        <p>Already have an account? <a id="showLogin" class="switch-form">Login</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- APP HEADER -->
+  <header class="app-header">
+    <div class="logo"><i class="fas fa-robot"></i> <span>VELLTOOLS</span></div>
+    <div class="user-info"><span id="username-display">Guest</span></div>
+  </header>
+
+  <main class="main-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <button id="new-project-btn" class="new-project-btn"><i class="fas fa-plus"></i> New Project</button>
+      </div>
+      <div class="history-section">
+        <h3>Recent Projects</h3>
+        <ul id="history-list" class="history-list"></ul>
+      </div>
+      <div class="sidebar-footer">
+        <div class="user-display">
+          <div class="user-avatar" id="user-avatar">G</div>
+          <div>
+            <div id="username-display-side">Guest</div>
+            <small style="color:#8a8a8a">Free Plan</small>
+          </div>
+        </div>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </div>
+    </aside>
+
+    <section class="chat-container">
+      <div id="chat-box" class="chat-box">
+        <div class="welcome-message">
+          <h1>VELLTOOLS AI Assistant</h1>
+          <p>Create, optimize, and modify Game Guardian scripts with AI assistance. Start a project to begin.</p>
+        </div>
+      </div>
+
+      <div class="typing-indicator" id="typing-indicator" style="display:none;">
+        <span></span><span></span><span></span>
+      </div>
+
+      <div class="input-area">
+        <textarea id="user-input" class="user-input" placeholder="Type your script instructions here..." disabled></textarea>
+        <button id="send-btn" class="send-btn" disabled><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
